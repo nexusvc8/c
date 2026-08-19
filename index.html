@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Nexus Hub Earn</title>
+  <title>Nexus Earn Hub</title>
   <link rel="icon" type="image/png" href="favicon.png">
-
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Plus Jakarta Sans -->
@@ -102,63 +102,50 @@
   <div class="w-full max-w-[430px] h-screen bg-white shadow-2xl overflow-hidden relative flex flex-col justify-between">
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 1: CREATE ACCOUNT / SIGN UP (NO GOOGLE/FB) -->
+    <!-- SCREEN 1: CREATE ACCOUNT / SIGN UP -->
     <!-- ========================================================================= -->
-    <div id="screen-signup" class="app-screen active px-6 py-6 justify-between overflow-y-auto hide-scrollbar">
+    <div id="screen-signup" class="app-screen active px-6 py-5 justify-between overflow-y-auto hide-scrollbar">
       <div>
-        <div class="flex justify-between items-start mb-4">
+        <div class="flex justify-between items-center mb-3">
           <div>
-            <h1 class="text-2xl font-bold text-slate-900 mt-2">Create Account</h1>
+            <h1 class="text-2xl font-bold text-slate-900">Create Account</h1>
             <p class="text-xs text-slate-500 font-medium mt-0.5">Sign up to get started</p>
           </div>
 
-          <div class="relative w-24 h-24 flex items-center justify-center">
-            <div class="w-20 h-24 bg-gradient-to-b from-purple-100 to-purple-200 rounded-2xl p-2 shadow-md border border-purple-300 flex flex-col items-center justify-between">
-              <div class="w-8 h-3 bg-purple-600 rounded-full -mt-3 shadow"></div>
-              <div class="w-6 h-6 rounded-full bg-purple-300 flex items-center justify-center">
-                <i data-lucide="user" class="w-3.5 h-3.5 text-purple-700"></i>
-              </div>
-              <div class="w-full space-y-1 px-1">
-                <div class="h-1 bg-purple-300 rounded-full flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500 -ml-1"></div></div>
-                <div class="h-1 bg-purple-300 rounded-full flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500 -ml-1"></div></div>
-                <div class="h-1 bg-purple-300 rounded-full flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500 -ml-1"></div></div>
-              </div>
-            </div>
-            <div class="absolute -bottom-1 -right-1 w-9 h-10 bg-purple-600 rounded-lg shadow-lg flex items-center justify-center text-white border-2 border-white">
-              <i data-lucide="check" class="w-5 h-5 font-black"></i>
-            </div>
+          <div class="relative w-14 h-14 rounded-2xl bg-purple-50 border border-purple-100 flex items-center justify-center text-brand-purple shadow-sm">
+            <i data-lucide="user-plus" class="w-7 h-7"></i>
           </div>
         </div>
 
-        <div id="referred-by-banner" class="hidden mb-3.5 p-3 bg-purple-50 border border-purple-200 rounded-2xl flex items-center justify-between">
+        <div id="referred-by-banner" class="hidden mb-3 p-2.5 bg-purple-50 border border-purple-200 rounded-2xl flex items-center justify-between">
           <div class="flex items-center gap-2">
             <div class="w-6 h-6 rounded-full bg-brand-purple text-white flex items-center justify-center">
               <i data-lucide="gift" class="w-3.5 h-3.5"></i>
             </div>
-            <span class="text-xs font-bold text-slate-700">Referred by: <span id="referred-by-code" class="text-brand-purple font-extrabold"></span></span>
+            <span class="text-xs font-bold text-slate-700">Referred by: <span id="referred-by-code" class="text-brand-purple font-extrabold"></span> (+Rs.50)</span>
           </div>
           <span class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] font-black">✓</span>
         </div>
 
-        <form id="signup-form" onsubmit="handleSignup(event)" class="space-y-3.5 mt-2">
+        <form id="signup-form" onsubmit="handleSignup(event)" class="space-y-2.5">
           <div class="relative flex items-center">
-            <i data-lucide="user" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="text" id="reg-name" required placeholder="Full Name" value="" class="w-full py-3.5 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
+            <i data-lucide="user" class="w-4 h-4 absolute left-4 text-brand-purple"></i>
+            <input type="text" id="reg-name" required placeholder="Full Name" class="w-full py-3 pl-11 pr-4 bg-white border border-slate-200 rounded-2xl text-xs font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple">
           </div>
 
           <div class="relative flex items-center">
-            <i data-lucide="mail" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="email" id="reg-email" required placeholder="Email Address" value="" class="w-full py-3.5 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
+            <i data-lucide="mail" class="w-4 h-4 absolute left-4 text-brand-purple"></i>
+            <input type="email" id="reg-email" required placeholder="Email Address" class="w-full py-3 pl-11 pr-4 bg-white border border-slate-200 rounded-2xl text-xs font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple">
           </div>
 
           <div class="relative flex items-center">
-            <i data-lucide="phone" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="tel" id="reg-phone" required placeholder="Phone Number" value="" class="w-full py-3.5 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
+            <i data-lucide="phone" class="w-4 h-4 absolute left-4 text-brand-purple"></i>
+            <input type="tel" id="reg-phone" required placeholder="Phone Number" class="w-full py-3 pl-11 pr-4 bg-white border border-slate-200 rounded-2xl text-xs font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple">
           </div>
 
           <div class="relative flex items-center">
-            <i data-lucide="users" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <select id="reg-gender" required class="w-full py-3.5 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition text-slate-700">
+            <i data-lucide="users" class="w-4 h-4 absolute left-4 text-brand-purple"></i>
+            <select id="reg-gender" required class="w-full py-3 pl-11 pr-4 bg-white border border-slate-200 rounded-2xl text-xs font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-slate-700">
               <option value="" disabled selected>Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -166,93 +153,78 @@
           </div>
 
           <div class="relative flex items-center">
-            <i data-lucide="lock" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="password" id="reg-password" required minlength="6" placeholder="Password" value="" class="w-full py-3.5 pl-12 pr-12 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
-            <button type="button" onclick="togglePasswordVisibility('reg-password', this)" class="absolute right-4 text-slate-400 hover:text-slate-600">
-              <i data-lucide="eye-off" class="w-5 h-5"></i>
+            <i data-lucide="lock" class="w-4 h-4 absolute left-4 text-brand-purple"></i>
+            <input type="password" id="reg-password" required minlength="6" placeholder="Password" class="w-full py-3 pl-11 pr-11 bg-white border border-slate-200 rounded-2xl text-xs font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple">
+            <button type="button" onclick="togglePasswordVisibility('reg-password', this)" class="absolute right-3.5 text-slate-400">
+              <i data-lucide="eye-off" class="w-4 h-4"></i>
             </button>
           </div>
 
           <div class="relative flex items-center">
-            <i data-lucide="lock" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="password" id="reg-confirm-password" required minlength="6" placeholder="Confirm Password" value="" class="w-full py-3.5 pl-12 pr-12 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
-            <button type="button" onclick="togglePasswordVisibility('reg-confirm-password', this)" class="absolute right-4 text-slate-400 hover:text-slate-600">
-              <i data-lucide="eye-off" class="w-5 h-5"></i>
+            <i data-lucide="lock" class="w-4 h-4 absolute left-4 text-brand-purple"></i>
+            <input type="password" id="reg-confirm-password" required minlength="6" placeholder="Confirm Password" class="w-full py-3 pl-11 pr-11 bg-white border border-slate-200 rounded-2xl text-xs font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple">
+            <button type="button" onclick="togglePasswordVisibility('reg-confirm-password', this)" class="absolute right-3.5 text-slate-400">
+              <i data-lucide="eye-off" class="w-4 h-4"></i>
             </button>
           </div>
 
-          <div class="flex items-center gap-2.5 pt-1">
+          <div class="flex items-center gap-2 pt-1">
             <input type="checkbox" id="terms" required class="w-4 h-4 rounded text-brand-purple focus:ring-brand-purple border-slate-300 accent-brand-purple cursor-pointer">
             <label for="terms" class="text-xs font-medium text-slate-600 cursor-pointer">
-              I agree to the <span class="text-brand-purple font-bold">Terms & Conditions</span>
+              I agree to the <button type="button" onclick="goToScreen('screen-terms')" class="text-brand-purple font-bold underline">Terms & Conditions</button>
             </label>
           </div>
 
           <div id="signup-error" class="hidden text-xs text-red-500 font-semibold px-1"></div>
 
-          <button id="signup-btn" type="submit" class="w-full py-4 mt-2 rounded-2xl bg-brand-purple hover:bg-brand-purple-dark text-white font-bold text-base shadow-lg shadow-purple-300 active:scale-[0.98] transition flex items-center justify-center">
+          <button id="signup-btn" type="submit" class="w-full py-3.5 mt-2 rounded-2xl bg-brand-purple hover:bg-brand-purple-dark text-white font-bold text-sm shadow-md shadow-purple-300 active:scale-[0.98] transition flex items-center justify-center">
             <span>Sign Up</span>
           </button>
         </form>
-      </div>
 
-      <div class="text-center py-4 mt-2">
-        <p class="text-xs text-slate-500 font-semibold">
-          Already have an account? 
-          <button onclick="goToScreen('screen-login')" class="text-brand-purple font-bold hover:underline">Login</button>
-        </p>
+        <div class="text-center py-3 mt-1">
+          <p class="text-xs text-slate-500 font-semibold">
+            Already have an account? 
+            <button onclick="goToScreen('screen-login')" class="text-brand-purple font-bold hover:underline">Login</button>
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 2: LOGIN (NO GOOGLE/FB & CLEAN ERROR MESSAGE) -->
+    <!-- SCREEN 2: LOGIN -->
     <!-- ========================================================================= -->
     <div id="screen-login" class="app-screen px-6 py-6 justify-between overflow-y-auto hide-scrollbar">
       <div>
-        <div class="text-center mt-2 mb-4">
+        <div class="text-center mt-2 mb-3">
           <h1 class="text-2xl font-extrabold text-slate-900">Welcome Back</h1>
           <p class="text-xs text-slate-500 font-medium mt-1">Login to continue</p>
         </div>
 
-        <div class="relative w-64 h-56 mx-auto flex items-center justify-center mb-6">
-          <div class="absolute w-44 h-44 bg-purple-100/60 rounded-full blur-xl"></div>
-          <div class="absolute top-8 left-2 w-12 h-10 bg-purple-500 rounded-xl shadow-md flex items-center justify-center z-20 transform -rotate-12">
-            <div class="w-0 h-0 border-t-[4px] border-t-transparent border-l-[8px] border-l-white border-b-[4px] border-b-transparent ml-0.5"></div>
-          </div>
-          <div class="relative z-10 w-36 h-48 bg-white rounded-3xl border-4 border-purple-500 shadow-2xl p-2.5 flex flex-col items-center justify-between">
+        <div class="relative w-48 h-40 mx-auto flex items-center justify-center mb-4">
+          <div class="w-28 h-32 bg-white rounded-3xl border-4 border-purple-500 shadow-xl p-2.5 flex flex-col items-center justify-between">
             <div class="w-8 h-1 bg-purple-200 rounded-full"></div>
             <div class="flex flex-col items-center">
-              <div class="w-12 h-12 bg-purple-50 rounded-2xl border border-purple-200 flex items-center justify-center text-brand-purple shadow-sm">
-                <i data-lucide="lock" class="w-6 h-6 stroke-[2.5]"></i>
+              <div class="w-10 h-10 bg-purple-50 rounded-2xl border border-purple-200 flex items-center justify-center text-brand-purple shadow-sm">
+                <i data-lucide="lock" class="w-5 h-5 stroke-[2.5]"></i>
               </div>
-              <p class="text-[9px] font-bold text-slate-800 mt-2">Earn Money</p>
+              <p class="text-[9px] font-bold text-slate-800 mt-1.5">Nexus Earn Hub</p>
               <p class="text-[8px] font-extrabold text-brand-purple">Online</p>
             </div>
             <div class="w-full h-1 bg-slate-100 rounded-full"></div>
-          </div>
-          <div class="absolute bottom-4 left-10 z-30 w-11 h-11 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 border-2 border-amber-100 shadow-lg flex items-center justify-center text-amber-900 font-extrabold text-sm">
-            $
-          </div>
-          <div class="absolute bottom-4 right-0 z-20 flex items-center">
-            <div class="relative w-20 h-16 bg-brand-purple rounded-2xl shadow-xl border-2 border-purple-400 flex items-center justify-end pr-2 transform rotate-6">
-              <div class="absolute -top-3 left-2 w-14 h-8 bg-emerald-400 rounded border border-emerald-200 transform -rotate-12 flex items-center justify-center text-[9px] text-white font-bold">$</div>
-              <div class="w-6 h-6 rounded-full bg-amber-400 border border-amber-200 flex items-center justify-center text-[10px] font-black text-amber-900 shadow">
-                $
-              </div>
-            </div>
           </div>
         </div>
 
         <form id="login-form" onsubmit="handleLogin(event)" class="space-y-3.5">
           <div class="relative flex items-center">
             <i data-lucide="user" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="email" id="login-email" required placeholder="Enter your email" value="" class="w-full py-3.5 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
+            <input type="email" id="login-email" required placeholder="Enter your email" class="w-full py-3.5 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
           </div>
 
           <div class="relative flex items-center">
             <i data-lucide="lock" class="w-5 h-5 absolute left-4 text-brand-purple"></i>
-            <input type="password" id="login-password" required placeholder="Enter your password" value="" class="w-full py-3.5 pl-12 pr-12 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
-            <button type="button" onclick="togglePasswordVisibility('login-password', this)" class="absolute right-4 text-slate-400 hover:text-slate-600">
+            <input type="password" id="login-password" required placeholder="Enter your password" class="w-full py-3.5 pl-12 pr-12 bg-white border border-slate-200 rounded-2xl text-sm font-medium focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
+            <button type="button" onclick="togglePasswordVisibility('login-password', this)" class="absolute right-4 text-slate-400">
               <i data-lucide="eye-off" class="w-5 h-5"></i>
             </button>
           </div>
@@ -269,18 +241,18 @@
             <span>Login</span>
           </button>
         </form>
-      </div>
 
-      <div class="text-center py-4">
-        <p class="text-xs text-slate-500 font-semibold">
-          Don't have an account? 
-          <button onclick="goToScreen('screen-signup')" class="text-brand-purple font-bold hover:underline">Sign Up</button>
-        </p>
+        <div class="text-center py-4">
+          <p class="text-xs text-slate-500 font-semibold">
+            Don't have an account? 
+            <button onclick="goToScreen('screen-signup')" class="text-brand-purple font-bold hover:underline">Sign Up</button>
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 3: DASHBOARD / HOME SCREEN (WITH HOME REFERRAL LINK BAR) -->
+    <!-- SCREEN 3: DASHBOARD / HOME SCREEN -->
     <!-- ========================================================================= -->
     <div id="screen-dashboard" class="app-screen justify-between overflow-hidden relative">
       
@@ -292,7 +264,7 @@
             <div class="relative w-12 h-12 rounded-full p-[2.5px] overflow-hidden flex items-center justify-center shadow-md flex-shrink-0">
               <div class="absolute inset-0 animated-logo-ring"></div>
               <div class="relative w-full h-full bg-white rounded-full p-1 flex items-center justify-center z-10">
-                <img src="https://i.ibb.co/93s3zrwn/logo-DWt6-ZF0g.png" alt="App Logo" class="w-full h-full object-contain">
+                <img src="https://i.ibb.co/93s3zrwn/logo-DWt6-ZF0g.png" alt="Nexus Earn Hub Logo" class="w-full h-full object-contain">
               </div>
             </div>
 
@@ -326,7 +298,6 @@
             </div>
           </div>
 
-          <!-- Official WhatsApp Channel Link -->
           <a href="https://whatsapp.com/channel/0029VbCxEFJ4Y9lx91NjCc3p" target="_blank" class="mt-5 bg-white text-slate-900 rounded-2xl p-3.5 flex items-center justify-between shadow-inner hover:bg-emerald-50 transition block">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center text-lg shadow">
@@ -354,7 +325,6 @@
             <span class="text-[9px] text-slate-400 mt-0.5">Invest Now</span>
           </button>
 
-          <!-- DAILY BONUS ACTION -->
           <button onclick="claimDailyBonusReward()" class="flex flex-col items-center text-center p-2.5 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-amber-50 transition active:scale-95 relative">
             <div class="w-11 h-11 rounded-full bg-amber-100 flex items-center justify-center text-amber-500 shadow-sm mb-2">
               <i data-lucide="gift" class="w-5 h-5"></i>
@@ -380,15 +350,15 @@
           </button>
         </div>
 
-        <!-- NEW: Referral Link Bar Directly on Home -->
+        <!-- Referral Link Bar on Home -->
         <div class="mb-6 p-3.5 bg-gradient-to-r from-purple-50 via-indigo-50 to-purple-50 border border-purple-200 rounded-2xl flex items-center justify-between shadow-sm">
           <div class="flex items-center gap-2.5 overflow-hidden pr-2">
             <div class="w-8 h-8 rounded-xl bg-brand-purple text-white flex items-center justify-center flex-shrink-0 shadow">
               <i data-lucide="share-2" class="w-4 h-4"></i>
             </div>
             <div class="truncate">
-              <p class="text-[10px] font-bold text-slate-400">Share Your Invite Link</p>
-              <p id="home-refer-link-display" class="text-xs font-black text-brand-purple truncate">https://...</p>
+              <p class="text-[10px] font-bold text-slate-400">Your Referral Link (Rs.50 Bonus)</p>
+              <p id="home-refer-link-display" class="text-xs font-black text-brand-purple truncate">Generating link...</p>
             </div>
           </div>
           <button onclick="copyReferralLink()" class="px-3.5 py-2 rounded-xl bg-brand-purple hover:bg-brand-purple-dark text-white font-extrabold text-xs shadow active:scale-95 transition flex-shrink-0">
@@ -409,27 +379,23 @@
       </div>
 
       <!-- FOOTER -->
-      <div id="global-footer" class="absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
+      <div class="app-footer-bar absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
         <button onclick="goToScreen('screen-dashboard')" data-tab="dashboard" class="footer-tab flex flex-col items-center text-brand-purple">
           <i data-lucide="home" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Home</span>
         </button>
-
         <button onclick="goToScreen('screen-history')" data-tab="history" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="history" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">History</span>
         </button>
-
         <button onclick="goToScreen('screen-earn')" data-tab="earn" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <div class="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center text-[10px] font-black">$</div>
           <span class="text-[10px] font-bold mt-1">Earn</span>
         </button>
-
         <button onclick="goToScreen('screen-wallet')" data-tab="wallet" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="wallet" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Wallet</span>
         </button>
-
         <button onclick="goToScreen('screen-profile')" data-tab="profile" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="user" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Profile</span>
@@ -488,39 +454,35 @@
         </div>
 
         <div>
-          <h3 class="text-base font-extrabold text-slate-900 mb-3.5">Withdrawal History</h3>
-          <div id="wallet-withdraw-history-list" class="space-y-3"></div>
-          <div id="wallet-history-load-more" class="text-center mt-4 mb-2 hidden">
-            <button onclick="loadMoreWalletWithdrawals()" class="px-5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-brand-purple font-extrabold text-xs transition">
-              See All (Next 8)
+          <div class="flex justify-between items-center mb-3.5">
+            <h3 class="text-base font-extrabold text-slate-900">Recent Withdrawals</h3>
+            <button onclick="goToWithdrawHistoryTab()" class="text-xs font-bold text-brand-purple hover:underline">
+              See All →
             </button>
           </div>
+          <div id="wallet-withdraw-history-list" class="space-y-3"></div>
         </div>
 
       </div>
 
       <!-- FOOTER -->
-      <div class="absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
+      <div class="app-footer-bar absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
         <button onclick="goToScreen('screen-dashboard')" data-tab="dashboard" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="home" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Home</span>
         </button>
-
         <button onclick="goToScreen('screen-history')" data-tab="history" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="history" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">History</span>
         </button>
-
         <button onclick="goToScreen('screen-earn')" data-tab="earn" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <div class="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center text-[10px] font-black">$</div>
           <span class="text-[10px] font-bold mt-1">Earn</span>
         </button>
-
         <button onclick="goToScreen('screen-wallet')" data-tab="wallet" class="footer-tab flex flex-col items-center text-brand-purple">
           <i data-lucide="wallet" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Wallet</span>
         </button>
-
         <button onclick="goToScreen('screen-profile')" data-tab="profile" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="user" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Profile</span>
@@ -550,27 +512,23 @@
       </div>
 
       <!-- FOOTER -->
-      <div class="absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
+      <div class="app-footer-bar absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
         <button onclick="goToScreen('screen-dashboard')" data-tab="dashboard" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="home" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Home</span>
         </button>
-
         <button onclick="goToScreen('screen-history')" data-tab="history" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="history" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">History</span>
         </button>
-
         <button onclick="goToScreen('screen-earn')" data-tab="earn" class="footer-tab flex flex-col items-center text-brand-purple">
           <div class="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center text-[10px] font-black bg-brand-purple/10">$</div>
           <span class="text-[10px] font-bold mt-1">Earn</span>
         </button>
-
         <button onclick="goToScreen('screen-wallet')" data-tab="wallet" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="wallet" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Wallet</span>
         </button>
-
         <button onclick="goToScreen('screen-profile')" data-tab="profile" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="user" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Profile</span>
@@ -593,7 +551,6 @@
           </div>
         </div>
 
-        <!-- Selected Package Summary -->
         <div class="p-4 bg-purple-50 border border-purple-200 rounded-2xl mb-5 flex items-center justify-between">
           <div>
             <span id="pay-pkg-badge" class="px-2.5 py-0.5 rounded-full bg-brand-purple text-white text-[10px] font-extrabold">Package 01</span>
@@ -605,7 +562,6 @@
           </div>
         </div>
 
-        <!-- Payment Accounts Card -->
         <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm mb-5">
           <h4 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-3">Send Payment To:</h4>
           
@@ -631,26 +587,21 @@
             </div>
           </div>
 
-          <!-- Gateway Selector -->
           <div class="mt-4 pt-3 border-t border-slate-100">
             <p class="text-xs font-bold text-slate-700 mb-2.5">Select Payment Gateway Used:</p>
             <div class="grid grid-cols-2 gap-2.5">
-              
               <div id="gateway-card-jazzcash" onclick="selectPaymentGateway('JazzCash')" class="p-3.5 border-2 border-emerald-500 bg-emerald-50/50 rounded-2xl cursor-pointer flex items-center justify-center gap-2.5 shadow-sm transition">
                 <img src="https://i.ibb.co/LX2pqZBV/Screenshot-20260816-074727-3.jpg" class="w-8 h-8 rounded-xl object-cover shadow-sm" alt="JazzCash">
                 <span class="text-xs font-extrabold text-slate-900">JazzCash</span>
               </div>
-
               <div id="gateway-card-easypaisa" onclick="selectPaymentGateway('Easypaisa')" class="p-3.5 border-2 border-slate-200 bg-white rounded-2xl cursor-pointer flex items-center justify-center gap-2.5 shadow-sm transition">
                 <img src="https://i.ibb.co/cXv3yLJd/8031c6abd95fcee33da6ecb67264eaa2.jpg" class="w-8 h-8 rounded-xl object-cover shadow-sm" alt="Easypaisa">
                 <span class="text-xs font-extrabold text-slate-900">Easypaisa</span>
               </div>
-
             </div>
           </div>
         </div>
 
-        <!-- Proof Form Inputs -->
         <div class="space-y-3.5 mb-6">
           <div>
             <label class="text-xs font-bold text-slate-700">Your Sender Account Number</label>
@@ -686,7 +637,6 @@
           </div>
         </div>
 
-        <!-- 4 TABS -->
         <div class="grid grid-cols-4 gap-1.5 p-1 bg-slate-100 rounded-2xl mb-4 text-center">
           <button onclick="switchHistoryTab('all')" id="tab-btn-all" class="py-2 rounded-xl text-xs font-extrabold transition bg-white text-brand-purple shadow-sm">All</button>
           <button onclick="switchHistoryTab('deposit')" id="tab-btn-deposit" class="py-2 rounded-xl text-xs font-extrabold transition text-slate-500 hover:text-slate-900">Deposit</button>
@@ -705,27 +655,23 @@
       </div>
 
       <!-- FOOTER -->
-      <div class="absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
+      <div class="app-footer-bar absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
         <button onclick="goToScreen('screen-dashboard')" data-tab="dashboard" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="home" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Home</span>
         </button>
-
         <button onclick="goToScreen('screen-history')" data-tab="history" class="footer-tab flex flex-col items-center text-brand-purple">
           <i data-lucide="history" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">History</span>
         </button>
-
         <button onclick="goToScreen('screen-earn')" data-tab="earn" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <div class="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center text-[10px] font-black">$</div>
           <span class="text-[10px] font-bold mt-1">Earn</span>
         </button>
-
         <button onclick="goToScreen('screen-wallet')" data-tab="wallet" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="wallet" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Wallet</span>
         </button>
-
         <button onclick="goToScreen('screen-profile')" data-tab="profile" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="user" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Profile</span>
@@ -739,7 +685,6 @@
     <div id="screen-profile" class="app-screen justify-between overflow-hidden relative">
       <div class="flex-1 overflow-y-auto px-5 pt-6 pb-24 hide-scrollbar">
         
-        <!-- User Avatar & Info Card -->
         <div class="flex items-center gap-4 mb-6">
           <div class="w-16 h-16 rounded-full border-2 border-brand-purple shadow-md overflow-hidden flex items-center justify-center flex-shrink-0">
             <img id="profile-user-avatar" src="https://i.ibb.co/JjNVJRNc/male-face-avatar-icon-set-flat-design-social-media-profiles-1281173-3806.jpg" alt="Avatar" class="w-full h-full object-cover">
@@ -751,7 +696,6 @@
           </div>
         </div>
 
-        <!-- Total Balance Card -->
         <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-100 rounded-3xl p-5 shadow-sm mb-6 flex items-center justify-between">
           <div>
             <p class="text-xs font-semibold text-slate-500">Total Balance</p>
@@ -764,7 +708,6 @@
           </button>
         </div>
 
-        <!-- Menu Options List -->
         <div class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm divide-y divide-slate-100 mb-6">
           
           <div onclick="goToScreen('screen-view-profile')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
@@ -787,7 +730,7 @@
             <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
           </div>
 
-          <div onclick="goToScreen('screen-wallet')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
+          <div onclick="goToWithdrawHistoryTab()" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
             <div class="flex items-center gap-3.5">
               <div class="w-9 h-9 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
                 <i data-lucide="clipboard-list" class="w-4 h-4"></i>
@@ -807,7 +750,7 @@
             <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
           </div>
 
-          <div onclick="showToast('Settings', 'App is running on latest version 2.4.0', 'settings')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
+          <div onclick="goToScreen('screen-settings')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
             <div class="flex items-center gap-3.5">
               <div class="w-9 h-9 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
                 <i data-lucide="settings" class="w-4 h-4"></i>
@@ -837,27 +780,23 @@
       </div>
 
       <!-- FOOTER -->
-      <div class="absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
+      <div class="app-footer-bar absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 flex justify-between items-center shadow-2xl z-40">
         <button onclick="goToScreen('screen-dashboard')" data-tab="dashboard" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="home" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Home</span>
         </button>
-
         <button onclick="goToScreen('screen-history')" data-tab="history" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="history" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">History</span>
         </button>
-
         <button onclick="goToScreen('screen-earn')" data-tab="earn" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <div class="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center text-[10px] font-black">$</div>
           <span class="text-[10px] font-bold mt-1">Earn</span>
         </button>
-
         <button onclick="goToScreen('screen-wallet')" data-tab="wallet" class="footer-tab flex flex-col items-center text-slate-400 hover:text-brand-purple transition">
           <i data-lucide="wallet" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Wallet</span>
         </button>
-
         <button onclick="goToScreen('screen-profile')" data-tab="profile" class="footer-tab flex flex-col items-center text-brand-purple">
           <i data-lucide="user" class="w-5 h-5"></i>
           <span class="text-[10px] font-bold mt-1">Profile</span>
@@ -881,7 +820,7 @@
           <div class="w-24 h-24 rounded-full border-4 border-brand-purple shadow-xl overflow-hidden mb-3">
             <img id="view-profile-avatar" src="https://i.ibb.co/JjNVJRNc/male-face-avatar-icon-set-flat-design-social-media-profiles-1281173-3806.jpg" alt="Avatar" class="w-full h-full object-cover">
           </div>
-          <p class="text-xs text-slate-400 font-semibold">User Details (Read Only)</p>
+          <p class="text-xs text-slate-400 font-semibold">Account Details</p>
         </div>
 
         <div class="space-y-3.5">
@@ -904,6 +843,11 @@
             <label class="text-xs font-bold text-slate-600">Gender</label>
             <input type="text" id="view-profile-gender" readonly class="w-full mt-1.5 p-3.5 bg-slate-100 border border-slate-200 rounded-2xl text-sm font-bold text-slate-800 cursor-not-allowed">
           </div>
+
+          <div>
+            <label class="text-xs font-bold text-slate-600">Password</label>
+            <input type="password" value="••••••••••••" readonly class="w-full mt-1.5 p-3.5 bg-slate-100 border border-slate-200 rounded-2xl text-sm font-bold text-slate-800 cursor-not-allowed">
+          </div>
         </div>
       </div>
 
@@ -913,7 +857,7 @@
     </div>
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 10: FULL SCREEN - PAYMENT METHODS (WITH IMAGE ICONS) -->
+    <!-- SCREEN 10: FULL SCREEN - PAYMENT METHODS -->
     <!-- ========================================================================= -->
     <div id="screen-payment-methods" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
       <div>
@@ -964,7 +908,7 @@
     </div>
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 11: FULL SCREEN - REFERRALS TEAM (MASKED EMAIL & COMMISSION) -->
+    <!-- SCREEN 11: FULL SCREEN - REFERRALS TEAM -->
     <!-- ========================================================================= -->
     <div id="screen-referrals" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
       <div class="flex-1">
@@ -978,7 +922,6 @@
           </div>
         </div>
 
-        <!-- Earned Commission Card -->
         <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-5 text-white shadow-md mb-5 flex items-center justify-between">
           <div>
             <p class="text-xs font-semibold text-emerald-100">Total Commission Earned</p>
@@ -1080,7 +1023,7 @@
     </div>
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 13: REFER & EARN (WITH BANNER IMAGE & NATIVE APP SHEET) -->
+    <!-- SCREEN 13: REFER & EARN -->
     <!-- ========================================================================= -->
     <div id="screen-refer" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
       <div class="flex-1 pb-4">
@@ -1091,7 +1034,6 @@
           <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Refer & Earn</h1>
         </div>
 
-        <!-- NEW BANNER IMAGE -->
         <div class="w-full rounded-3xl overflow-hidden shadow-md my-2 border border-purple-100">
           <img src="https://i.ibb.co/hJhZM7HV/flat-icon-megaphone-people-refer-friend-poster-banner-flat-isometric-vector-illustration-d-vector-il.jpg" alt="Refer and Earn Banner" class="w-full h-44 object-cover">
         </div>
@@ -1115,7 +1057,7 @@
         <div class="mt-3">
           <label class="text-xs font-bold text-slate-600">Share your link:</label>
           <div class="mt-1.5 flex items-center justify-between p-2 pl-4 bg-purple-50/50 border border-purple-200 rounded-2xl">
-            <span id="refer-link-val" class="font-bold text-xs text-brand-purple truncate max-w-[210px]">https://appname.com/ref/USMAN123</span>
+            <span id="refer-link-val" class="font-bold text-xs text-brand-purple truncate max-w-[210px]">Generating link...</span>
             <button onclick="copyReferralLink()" class="px-5 py-2.5 rounded-xl bg-white border border-purple-200 text-brand-purple font-extrabold text-xs shadow-sm hover:bg-purple-50 active:scale-95 transition flex-shrink-0">
               Copy
             </button>
@@ -1127,15 +1069,15 @@
           <div class="space-y-2.5">
             <div class="flex items-center gap-3">
               <div class="w-6 h-6 rounded-full bg-purple-100 text-brand-purple font-extrabold text-xs flex items-center justify-center flex-shrink-0">1</div>
-              <p class="text-xs font-semibold text-slate-700">Share your code with friends</p>
+              <p class="text-xs font-semibold text-slate-700">Share your invite code with friends</p>
             </div>
             <div class="flex items-center gap-3">
               <div class="w-6 h-6 rounded-full bg-purple-100 text-brand-purple font-extrabold text-xs flex items-center justify-center flex-shrink-0">2</div>
-              <p class="text-xs font-semibold text-slate-700">Friend joins and earns</p>
+              <p class="text-xs font-semibold text-slate-700">Friend joins & gets Rs. 50 bonus</p>
             </div>
             <div class="flex items-center gap-3">
               <div class="w-6 h-6 rounded-full bg-purple-100 text-brand-purple font-extrabold text-xs flex items-center justify-center flex-shrink-0">3</div>
-              <p class="text-xs font-semibold text-slate-700">You both earn bonus</p>
+              <p class="text-xs font-semibold text-slate-700">You get daily commission & limit rewards</p>
             </div>
           </div>
         </div>
@@ -1150,7 +1092,7 @@
     </div>
 
     <!-- ========================================================================= -->
-    <!-- SCREEN 14: WITHDRAW SCREEN (MIN RS. 20 & URDU NOTE) -->
+    <!-- SCREEN 14: WITHDRAW SCREEN -->
     <!-- ========================================================================= -->
     <div id="screen-withdraw" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
       <div>
@@ -1186,7 +1128,6 @@
             </button>
           </div>
 
-          <!-- DYNAMIC METHODS CONTAINER -->
           <div id="dynamic-withdraw-methods" class="space-y-2.5"></div>
         </div>
 
@@ -1194,9 +1135,8 @@
           <label class="text-xs font-extrabold text-slate-800">Enter Amount</label>
           <input type="number" id="withdraw-amount-input" placeholder="" class="w-full mt-2 py-3.5 px-4 bg-white border border-slate-200 rounded-2xl text-sm font-semibold focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition">
           
-          <!-- DYNAMIC WITHDRAWAL RANGE DISPLAY (MIN RS. 20) -->
           <p id="withdraw-range-text" class="text-[11px] font-bold text-slate-500 mt-1.5">
-            Withdrawable Range: Rs. 20.00 - Rs. 0.00
+            Minimum withdraw amount Rs. 20
           </p>
         </div>
 
@@ -1204,23 +1144,238 @@
           Withdraw Now
         </button>
 
-        <!-- EXACT URDU NOTE SPECIFIED -->
-        <div id="withdraw-urdu-note-box" class="mt-6 p-4 bg-purple-50/80 border border-purple-200 rounded-3xl text-right leading-relaxed" dir="rtl">
-          <p class="text-xs font-bold text-slate-800" id="withdraw-urdu-note-text">
-            محترم صارف،<br>
-            آپ کی واپسی کی حد PKR 0.00 ہے۔<br>
-            براہ کرم اپنے ریفرلز بڑھائیں تاکہ آپ کی واپسی کی حد بڑھ سکے۔ جب آپ کا ریفرل پیکیج خریدتا ہے تو آپ کو پیکیج کی قیمت کا 50% واپسی والیٹ میں ملتا ہے۔ اس کے بعد آپ رقم نکال سکیں گے۔<br>
-            شکریہ۔
-          </p>
+        <div id="withdraw-urdu-note-box" class="mt-6 p-4 bg-purple-50/80 border border-purple-200 rounded-3xl text-right leading-relaxed hidden" dir="rtl">
+          <p class="text-xs font-bold text-slate-800" id="withdraw-urdu-note-text"></p>
         </div>
 
       </div>
     </div>
 
+    <!-- ========================================================================= -->
+    <!-- SCREEN 15: SETTINGS SCREEN -->
+    <!-- ========================================================================= -->
+    <div id="screen-settings" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <button onclick="goToScreen('screen-profile')" class="p-2 -ml-2 text-slate-800 hover:bg-slate-100 rounded-full transition">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </button>
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Settings</h1>
+        </div>
+
+        <div class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm divide-y divide-slate-100">
+          
+          <div onclick="goToScreen('screen-help')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
+            <div class="flex items-center gap-3.5">
+              <div class="w-9 h-9 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
+                <i data-lucide="help-circle" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800">Help & Support</span>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div onclick="goToScreen('screen-privacy')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
+            <div class="flex items-center gap-3.5">
+              <div class="w-9 h-9 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
+                <i data-lucide="shield" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800">Privacy Policy</span>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div onclick="goToScreen('screen-terms')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
+            <div class="flex items-center gap-3.5">
+              <div class="w-9 h-9 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800">Terms & Conditions</span>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div onclick="goToScreen('screen-about')" class="p-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition">
+            <div class="flex items-center gap-3.5">
+              <div class="w-9 h-9 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
+                <i data-lucide="info" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800">About Us</span>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+        </div>
+      </div>
+
+      <button onclick="goToScreen('screen-profile')" class="w-full py-4 rounded-2xl bg-brand-purple text-white font-bold text-sm shadow-md active:scale-95 transition mt-6">
+        Back to Profile
+      </button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SCREEN 16: TERMS & CONDITIONS -->
+    <!-- ========================================================================= -->
+    <div id="screen-terms" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <button onclick="goBackFromPolicy()" class="p-2 -ml-2 text-slate-800 hover:bg-slate-100 rounded-full transition">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </button>
+          <div>
+            <h1 class="text-xl font-extrabold text-slate-900">Terms & Conditions</h1>
+            <p class="text-[10px] text-slate-400 font-semibold">Nexus Hub Earn • Last Updated: June 2025</p>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-600 space-y-3.5 leading-relaxed bg-slate-50 p-4 rounded-3xl border border-slate-200">
+          <p>Please read these Terms and Conditions ("Terms") carefully before creating an account or using the Nexus Hub Earn platform ("App"). By accessing or using the App, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must not use the App.</p>
+          
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">1. Eligibility</h4>
+            <p>1.1 You must be at least 18 years of age to use this App.<br>
+            1.2 By using this App, you represent and warrant that you are legally capable of entering into a binding agreement.<br>
+            1.3 This App is not available to individuals who are barred under applicable law.</p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">2. Account Registration & Security</h4>
+            <p>2.1 Register with full name, valid email, phone, gender, and secure password.<br>
+            2.2 False or misleading information results in suspension.<br>
+            2.3 Keep credentials confidential. Only one account per individual is allowed.</p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">3. Investment Packages</h4>
+            <p>3.1 Offers defined price, daily return rate, and duration.<br>
+            3.2 Package returns credit to your wallet daily upon verified payment activation.</p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">4. Payments & Deposits</h4>
+            <p>4.1 Payments accepted via JazzCash & Easypaisa only.<br>
+            4.2 Submit valid Trx ID. Fake or duplicated IDs lead to permanent account termination.<br>
+            4.3 Verification takes up to 24 hours.</p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">5. Wallet & Withdrawals</h4>
+            <p>5.1 Minimum withdraw threshold applies.<br>
+            5.2 Processed in 24 to 48 hours. Provide accurate JazzCash/Easypaisa details.</p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">6. Refer & Earn Program</h4>
+            <p>6.1 Earn commissions when referred friends join and activate packages.<br>
+            6.2 Self-referrals, bots, or fake accounts will result in immediate disqualification and balance forfeiture.</p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-2">
+            <h4 class="font-extrabold text-slate-900 text-xs mb-1">7. Disclaimer of Financial Advice</h4>
+            <p>Nexus Hub Earn is a digital earning platform. Nothing should be construed as financial advice or bank guarantee. Invest only what you can afford.</p>
+          </div>
+          
+          <p class="text-[10px] text-slate-400 pt-2 text-center font-bold">© 2025 Nexus Hub Earn. All rights reserved.</p>
+        </div>
+      </div>
+
+      <button onclick="goBackFromPolicy()" class="w-full py-4 rounded-2xl bg-brand-purple text-white font-bold text-sm shadow-md active:scale-95 transition mt-4">
+        Done
+      </button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SCREEN 17: HELP & SUPPORT -->
+    <!-- ========================================================================= -->
+    <div id="screen-help" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <button onclick="goToScreen('screen-settings')" class="p-2 -ml-2 text-slate-800 hover:bg-slate-100 rounded-full transition">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </button>
+          <div>
+            <h1 class="text-xl font-extrabold text-slate-900">Help & Support</h1>
+            <p class="text-[10px] text-slate-400 font-semibold">Nexus Hub Earn • Last Updated: June 2025</p>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-600 space-y-3.5 leading-relaxed bg-slate-50 p-4 rounded-3xl border border-slate-200">
+          <h4 class="font-extrabold text-slate-900 text-xs">1. How to Get Help</h4>
+          <p>• <b>In-App Support:</b> Use Profile &gt; Support to connect via WhatsApp, Telegram or SMS.<br>
+          • <b>Official WhatsApp Channel:</b> Join our channel for updates and announcements.<br>
+          • <b>Response Time:</b> We aim to respond within 24 to 48 working hours.</p>
+
+          <h4 class="font-extrabold text-slate-900 text-xs border-t border-slate-200 pt-2">2. Common Solutions</h4>
+          <p><b>Payment not activated?</b><br>Manual verification takes a few hours. If not active after 24 hours, send your Trx ID and sender account to Support.</p>
+          <p><b>Withdrawal status pending?</b><br>Withdrawals are processed manually in queue within 24 to 48 hours.</p>
+          <p><b>Forgot Password?</b><br>Use the "Forgot Password?" option on the login screen to reset via email.</p>
+        </div>
+      </div>
+
+      <button onclick="goToScreen('screen-settings')" class="w-full py-4 rounded-2xl bg-brand-purple text-white font-bold text-sm shadow-md active:scale-95 transition mt-4">
+        Back to Settings
+      </button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SCREEN 18: PRIVACY POLICY -->
+    <!-- ========================================================================= -->
+    <div id="screen-privacy" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <button onclick="goToScreen('screen-settings')" class="p-2 -ml-2 text-slate-800 hover:bg-slate-100 rounded-full transition">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </button>
+          <div>
+            <h1 class="text-xl font-extrabold text-slate-900">Privacy Policy</h1>
+            <p class="text-[10px] text-slate-400 font-semibold">Nexus Hub Earn • Last Updated: June 2025</p>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-600 space-y-3 leading-relaxed bg-slate-50 p-4 rounded-3xl border border-slate-200">
+          <p>Nexus Hub Earn respects your privacy. We collect your name, email, phone number, gender, and payment details solely for account management, transaction processing, and security verification.</p>
+          <p><b>Data Storage & Protection:</b> All credentials and records are stored securely using Google Firebase Authentication and Realtime Database.</p>
+          <p><b>No Data Selling:</b> We never sell, rent, or lease your personal data to third parties for advertising.</p>
+          <p class="text-[10px] text-slate-400 pt-1 text-center font-bold">© 2025 Nexus Hub Earn. All rights reserved.</p>
+        </div>
+      </div>
+
+      <button onclick="goToScreen('screen-settings')" class="w-full py-4 rounded-2xl bg-brand-purple text-white font-bold text-sm shadow-md active:scale-95 transition mt-4">
+        Back to Settings
+      </button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SCREEN 19: ABOUT US -->
+    <!-- ========================================================================= -->
+    <div id="screen-about" class="app-screen px-5 py-6 justify-between overflow-y-auto hide-scrollbar">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <button onclick="goToScreen('screen-settings')" class="p-2 -ml-2 text-slate-800 hover:bg-slate-100 rounded-full transition">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </button>
+          <div>
+            <h1 class="text-xl font-extrabold text-slate-900">About Us</h1>
+            <p class="text-[10px] text-slate-400 font-semibold">Nexus Hub Earn • Last Updated: June 2025</p>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-600 space-y-3 leading-relaxed bg-slate-50 p-4 rounded-3xl border border-slate-200">
+          <p><b>Who We Are:</b> Nexus Hub Earn is an online platform designed to provide transparent, accessible earning opportunities through structured packages and referral rewards.</p>
+          <p><b>Our Mission:</b> Empower individuals with transparent tools, fast withdrawals, daily bonuses, and fair community rewards.</p>
+          <p><b>What We Offer:</b> Multiple budget-friendly packages, 24/7 support channels, and reliable real-time tracking.</p>
+        </div>
+      </div>
+
+      <button onclick="goToScreen('screen-settings')" class="w-full py-4 rounded-2xl bg-brand-purple text-white font-bold text-sm shadow-md active:scale-95 transition mt-4">
+        Back to Settings
+      </button>
+    </div>
+
   </div>
 
   <!-- ========================================================================= -->
-  <!-- JAVASCRIPT & FIREBASE LOGIC -->
+  <!-- JAVASCRIPT & SCALABLE FIREBASE ARCHITECTURE -->
   <!-- ========================================================================= -->
   <script>
     lucide.createIcons();
@@ -1251,7 +1406,7 @@
       }
 
       iconBox.innerHTML = `<i data-lucide="${iconName}" class="w-5 h-5"></i>`;
-      lucide.createIcons();
+      lucide.createIcons({ root: iconBox });
 
       toast.classList.remove('toast-enter');
       toast.classList.add('toast-visible');
@@ -1263,7 +1418,6 @@
       }, 3500);
     }
 
-    // 1. Firebase Configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBGfceOTPICSWNe948xHcqNy9DQWyJ3zzc",
       authDomain: "growth-31702.firebaseapp.com",
@@ -1279,11 +1433,19 @@
     const auth = firebase.auth();
     const db = firebase.database();
 
+    // Accurate Server Time Offset to prevent phone clock tampering
+    let serverTimeOffset = 0;
+    db.ref('.info/serverTimeOffset').on('value', (snap) => {
+      serverTimeOffset = snap.val() || 0;
+    });
+    function getServerTime() {
+      return Date.now() + serverTimeOffset;
+    }
+
     let currentUser = null;
     let currentBalance = 0.00;
     let currentUserGender = 'Male';
     let currentReferralCode = "USMAN123";
-    let userTransactions = [];
     let userInvestments = [];
     let savedPaymentMethods = {};
     let selectedPackageForPayment = null;
@@ -1292,7 +1454,12 @@
     
     let historyTab = 'all';
     let historyLimit = 8;
-    let walletWithdrawLimit = 8;
+    let policyReturnScreen = 'screen-signup';
+
+    // Active DB Listener References for cleanup on logout
+    let activeUserRef = null;
+    let activeInvestmentsRef = null;
+    let activeWithdrawalsRef = null;
 
     const urlParams = new URLSearchParams(window.location.search);
     const incomingRef = urlParams.get('ref');
@@ -1322,7 +1489,7 @@
     ];
 
     function isPackageActive(pkgName) {
-      const now = Date.now();
+      const now = getServerTime();
       return userInvestments.some(inv => 
         inv.packageName === pkgName && 
         inv.status === 'Approved' && 
@@ -1333,7 +1500,7 @@
     function isPackageProcessing(pkgName) {
       return userInvestments.some(inv => 
         inv.packageName === pkgName && 
-        inv.status === 'Processing'
+        inv.status === 'Pending'
       );
     }
 
@@ -1406,7 +1573,7 @@
         `;
       }).join('');
 
-      lucide.createIcons();
+      lucide.createIcons({ root: container });
     }
     renderPackages();
 
@@ -1470,7 +1637,8 @@
         const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
         const timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-        const newInvestmentRef = db.ref('users/' + currentUser.uid + '/investments').push();
+        // FLATTENED NODE: /investments/{uid}/{invId}
+        const newInvestmentRef = db.ref('investments/' + currentUser.uid).push();
         const invId = newInvestmentRef.key;
 
         const investmentData = {
@@ -1486,7 +1654,7 @@
           senderAccount: senderAcc,
           transactionId: trxId,
           paymentMethod: selectedPaymentGateway,
-          status: "Processing",
+          status: "Pending",
           date: dateStr,
           time: timeStr,
           createdAt: firebase.database.ServerValue.TIMESTAMP,
@@ -1503,7 +1671,7 @@
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i data-lucide="shield-check" class="w-5 h-5"></i><span>Pay Securely</span>';
-        lucide.createIcons();
+        lucide.createIcons({ root: btn });
       }
     }
 
@@ -1513,13 +1681,24 @@
         listenToUserData(user.uid);
         goToScreen('screen-dashboard');
       } else {
+        cleanupListeners();
         currentUser = null;
         goToScreen('screen-signup');
       }
     });
 
+    function cleanupListeners() {
+      if (activeUserRef) { activeUserRef.off(); activeUserRef = null; }
+      if (activeInvestmentsRef) { activeInvestmentsRef.off(); activeInvestmentsRef = null; }
+      if (activeWithdrawalsRef) { activeWithdrawalsRef.off(); activeWithdrawalsRef = null; }
+    }
+
+    // 1. FLATTENED PROFILE LISTENER: /users/{uid}
     function listenToUserData(uid) {
-      db.ref('users/' + uid).on('value', (snapshot) => {
+      cleanupListeners();
+
+      activeUserRef = db.ref('users/' + uid);
+      activeUserRef.on('value', (snapshot) => {
         const data = snapshot.val();
         if (data) {
           const fullName = data.fullName || 'User';
@@ -1530,7 +1709,7 @@
 
           const limitUpdatedAt = data.withdrawLimitUpdatedAt || 0;
           const oneDayMs = 24 * 60 * 60 * 1000;
-          if (Date.now() - limitUpdatedAt > oneDayMs) {
+          if (getServerTime() - limitUpdatedAt > oneDayMs) {
             currentWithdrawLimit = 0.00;
           } else {
             currentWithdrawLimit = parseFloat(data.withdrawLimit || 0.00);
@@ -1539,7 +1718,7 @@
           const lastDailyClaim = data.lastDailyBonusClaim || 0;
           const bonusTag = document.getElementById('daily-bonus-status-tag');
           if (bonusTag) {
-            if (Date.now() - lastDailyClaim >= oneDayMs) {
+            if (getServerTime() - lastDailyClaim >= oneDayMs) {
               bonusTag.innerText = "Claim";
               bonusTag.className = "text-[9px] text-emerald-600 font-extrabold mt-0.5 bg-emerald-50 px-1.5 py-0.5 rounded";
             } else {
@@ -1563,66 +1742,38 @@
           document.getElementById('view-profile-avatar').src = avatarUrl;
 
           document.getElementById('refer-code-val').innerText = currentReferralCode;
-          const shareUrl = window.location.origin + window.location.pathname + '?ref=' + currentReferralCode;
+          
+          // DYNAMIC REFERRAL LINK (Works on any host: Vercel, InfinityFree, GitHub, Custom Domain)
+          const currentOrigin = window.location.origin + window.location.pathname;
+          const shareUrl = `${currentOrigin}?ref=${currentReferralCode}`;
           document.getElementById('refer-link-val').innerText = shareUrl;
           
           const homeRefDisplay = document.getElementById('home-refer-link-display');
           if (homeRefDisplay) homeRefDisplay.innerText = shareUrl;
 
-          userInvestments = data.investments ? Object.values(data.investments).reverse() : [];
-          userTransactions = data.transactions ? Object.values(data.transactions).reverse() : [];
-
-          checkForReferralPackageCommission(userInvestments, data.referredBy);
-
           updateBalanceUI();
-          renderPackages();
-          renderHistoryScreen();
-          renderWalletWithdrawals();
-          renderActiveTasks();
           renderSavedPaymentMethods();
           renderWithdrawPaymentOptions();
-          loadReferralsList();
         }
       });
-    }
 
-    async function checkForReferralPackageCommission(investments, referredByCode) {
-      if (!referredByCode || !investments || !currentUser) return;
+      // 2. FLATTENED INVESTMENTS LISTENER: /investments/{uid}
+      activeInvestmentsRef = db.ref('investments/' + uid);
+      activeInvestmentsRef.on('value', (snap) => {
+        const invData = snap.val();
+        userInvestments = invData ? Object.values(invData).reverse() : [];
+        renderPackages();
+        renderActiveTasks();
+        updateBalanceUI();
+      });
 
-      for (const inv of investments) {
-        if (inv.status === 'Approved' && !inv.commissionAwarded) {
-          const referrerSnap = await db.ref('users').orderByChild('referralCode').equalTo(referredByCode).once('value');
-          const referrerData = referrerSnap.val();
-          if (referrerData) {
-            const referrerUid = Object.keys(referrerData)[0];
-            const referrerUser = referrerData[referrerUid];
-            const commission = (inv.packagePriceNum || 0) * 0.10;
-            const newReferrerBal = (parseFloat(referrerUser.balance) || 0) + commission;
-            const currentTotalComm = (parseFloat(referrerUser.totalReferralCommission) || 0) + commission;
-
-            const d = new Date();
-            const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-
-            await db.ref('users/' + referrerUid + '/transactions').push({
-              type: 'reward',
-              title: `10% Commission (${inv.packageName})`,
-              amountStr: `+Rs. ${commission.toFixed(2)}`,
-              isPositive: true,
-              date: dateStr,
-              timestamp: firebase.database.ServerValue.TIMESTAMP
-            });
-
-            await db.ref('users/' + referrerUid).update({
-              balance: newReferrerBal,
-              totalReferralCommission: currentTotalComm
-            });
-
-            await db.ref('users/' + currentUser.uid + '/investments/' + inv.id).update({
-              commissionAwarded: true
-            });
-          }
-        }
-      }
+      // 3. FLATTENED RECENT WITHDRAWALS (Only limit to last 5 for wallet widget)
+      activeWithdrawalsRef = db.ref('withdrawals/' + uid).limitToLast(5);
+      activeWithdrawalsRef.on('value', (snap) => {
+        const wdData = snap.val();
+        const list = wdData ? Object.values(wdData).reverse() : [];
+        renderWalletWithdrawalsUI(list);
+      });
     }
 
     function generateRefCodeFromName(name) {
@@ -1639,32 +1790,36 @@
       document.getElementById('withdraw-available-balance').innerText = formattedBal;
       document.getElementById('withdraw-available-limit').innerText = currentWithdrawLimit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-      // Update Live Withdrawable Range Display (MIN RS. 20)
+      const hasActivePkg = userInvestments.some(inv => inv.status === 'Approved');
+      const urduNoteBox = document.getElementById('withdraw-urdu-note-box');
+      const urduNoteEl = document.getElementById('withdraw-urdu-note-text');
       const rangeEl = document.getElementById('withdraw-range-text');
-      if (rangeEl) {
-        if (currentWithdrawLimit < 20) {
-          rangeEl.innerText = `Withdrawable Range: Rs. 0.00 - Rs. 0.00 (Minimum limit required: Rs. 20.00)`;
-        } else {
+
+      if (hasActivePkg) {
+        if (urduNoteBox) urduNoteBox.classList.remove('hidden');
+        if (urduNoteEl) {
+          const uName = document.getElementById('profile-full-name').innerText || 'صارف';
+          const formattedLim = currentWithdrawLimit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          urduNoteEl.innerHTML = `محترم صارف <b>${uName}</b>،<br>
+          آپ کی واپسی کی حد <b>PKR ${formattedLim}</b> ہے۔<br>
+          براہ کرم اپنے ریفرلز بڑھائیں تاکہ آپ کی واپسی کی حد بڑھ سکے۔ جب آپ کا ریفرل پیکیج خریدتا ہے تو آپ کو پیکیج کی قیمت کا 50% واپسی والیٹ میں ملتا ہے۔ اس کے بعد آپ رقم نکال سکیں گے۔<br>
+          شکریہ۔`;
+        }
+        if (rangeEl) {
           rangeEl.innerText = `Withdrawable Range: Rs. 20.00 - Rs. ${currentWithdrawLimit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         }
-      }
-
-      // Update Urdu Note with User Name and Live Limit
-      const urduNoteEl = document.getElementById('withdraw-urdu-note-text');
-      if (urduNoteEl) {
-        const uName = document.getElementById('profile-full-name').innerText || 'صارف';
-        const formattedLim = currentWithdrawLimit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        urduNoteEl.innerHTML = `محترم صارف <b>${uName}</b>،<br>
-        آپ کی واپسی کی حد <b>PKR ${formattedLim}</b> ہے۔<br>
-        براہ کرم اپنے ریفرلز بڑھائیں تاکہ آپ کی واپسی کی حد بڑھ سکے۔ جب آپ کا ریفرل پیکیج خریدتا ہے تو آپ کو پیکیج کی قیمت کا 50% واپسی والیٹ میں ملتا ہے۔ اس کے بعد آپ رقم نکال سکیں گے۔<br>
-        شکریہ۔`;
+      } else {
+        if (urduNoteBox) urduNoteBox.classList.add('hidden');
+        if (rangeEl) {
+          rangeEl.innerText = `Minimum withdraw amount Rs. 20`;
+        }
       }
     }
 
     async function claimDailyBonusReward() {
       if (!currentUser) return;
 
-      const now = Date.now();
+      const now = getServerTime();
       const activePkgs = userInvestments.filter(inv => 
         inv.status === 'Approved' && 
         (now - (inv.createdAt || 0)) < PACKAGE_DURATION_MS
@@ -1693,7 +1848,8 @@
       const d = new Date();
       const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
-      await db.ref('users/' + currentUser.uid + '/transactions').push({
+      // FLATTENED NODE: /transactions/{uid}
+      await db.ref('transactions/' + currentUser.uid).push({
         type: 'reward',
         title: 'Daily Bonus Reward',
         amountStr: `+Rs. ${rewardAmount.toFixed(2)}`,
@@ -1704,25 +1860,25 @@
 
       await db.ref('users/' + currentUser.uid).update({
         balance: newBal,
-        lastDailyBonusClaim: now
+        lastDailyBonusClaim: firebase.database.ServerValue.TIMESTAMP
       });
 
       showToast("Daily Bonus Claimed! 🎉", `+Rs. ${rewardAmount.toFixed(2)} added to your balance!`, "calendar");
     }
 
-    // Native Share / Invite System (Opens WhatsApp, Messenger, Telegram, FB, Insta etc.)
     function shareInviteLinkNative() {
-      const link = document.getElementById('refer-link-val').innerText;
-      const message = `🔥 Join the official Earn Money App & start making daily profits right now!\n\n👉 Use my Invitation Code: ${currentReferralCode}\n🔗 Link to join: ${link}`;
+      const currentOrigin = window.location.origin + window.location.pathname;
+      const link = `${currentOrigin}?ref=${currentReferralCode}`;
+      const message = `🔥 Join the official Earn Money App & start making daily profits right now!\n👉 Use my Invitation Code & Get Rs.50: ${currentReferralCode}\n👇🔗 Link to join: ${link}`;
 
       if (navigator.share) {
         navigator.share({
-          title: 'Earn Money Online App',
+          title: 'Nexus Earn Hub',
           text: message,
           url: link
         }).catch(() => {});
       } else {
-        copyTextUniversal(message, "Copied", "Invite message copied!");
+        copyTextUniversal(message, "Copied", "Invite message and link copied!");
       }
     }
 
@@ -1732,13 +1888,14 @@
     }
 
     function copyReferralLink() {
-      const link = document.getElementById('refer-link-val').innerText;
+      const currentOrigin = window.location.origin + window.location.pathname;
+      const link = `${currentOrigin}?ref=${currentReferralCode}`;
       copyTextUniversal(link, "Link Copied", "Invite link copied!");
     }
 
     function renderActiveTasks() {
       const homeContainer = document.getElementById('home-tasks-container');
-      const now = Date.now();
+      const now = getServerTime();
       const approvedInvestments = userInvestments.filter(inv => 
         inv.status === 'Approved' && 
         (now - (inv.createdAt || 0)) < PACKAGE_DURATION_MS
@@ -1757,7 +1914,7 @@
             </button>
           </div>
         `;
-        lucide.createIcons();
+        lucide.createIcons({ root: homeContainer });
         return;
       }
 
@@ -1809,7 +1966,7 @@
         `;
       }).join('');
 
-      lucide.createIcons();
+      lucide.createIcons({ root: homeContainer });
     }
 
     async function claimPackageDailyReturn(invId) {
@@ -1817,7 +1974,7 @@
       const inv = userInvestments.find(i => i.id === invId);
       if (!inv || inv.status !== 'Approved') return;
 
-      const now = Date.now();
+      const now = getServerTime();
       const lastClaim = inv.lastClaimedTimestamp || 0;
       const oneDayMs = 24 * 60 * 60 * 1000;
 
@@ -1828,49 +1985,43 @@
 
       const returnAmount = parseFloat(inv.dailyReturnNum || 0);
       const newBal = currentBalance + returnAmount;
-      const d = new Date();
-      const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
-      await db.ref('users/' + currentUser.uid + '/transactions').push({
-        type: 'reward',
-        title: `${inv.packageName} Daily Return`,
-        amountStr: `+Rs. ${returnAmount.toFixed(2)}`,
-        isPositive: true,
-        date: dateStr,
-        timestamp: firebase.database.ServerValue.TIMESTAMP
-      });
-
-      await db.ref('users/' + currentUser.uid + '/investments/' + invId).update({
-        lastClaimedTimestamp: now
+      await db.ref('investments/' + currentUser.uid + '/' + invId).update({
+        lastClaimedTimestamp: firebase.database.ServerValue.TIMESTAMP
       });
 
       await db.ref('users/' + currentUser.uid).update({
         balance: newBal
       });
 
+      // 8% Withdrawal Limit Reward to Referrer
       const userSnap = await db.ref('users/' + currentUser.uid).once('value');
       const userData = userSnap.val();
       if (userData && userData.referredBy) {
-        const referrerSnap = await db.ref('users').orderByChild('referralCode').equalTo(userData.referredBy).once('value');
-        const referrerData = referrerSnap.val();
-        if (referrerData) {
-          const referrerUid = Object.keys(referrerData)[0];
-          const referrerObj = referrerData[referrerUid];
+        // Instant O(1) lookup via /referral_codes/{code}
+        const refCodeSnap = await db.ref('referral_codes/' + userData.referredBy).once('value');
+        const referrerObj = refCodeSnap.val();
+        if (referrerObj && referrerObj.uid) {
+          const referrerUid = referrerObj.uid;
+          const referrerUserSnap = await db.ref('users/' + referrerUid).once('value');
+          const referrerUser = referrerUserSnap.val();
 
-          const limitIncrease = (inv.packagePriceNum || 0) * 0.08;
-          let currentRefLimit = parseFloat(referrerObj.withdrawLimit || 0.00);
-          const limitTime = referrerObj.withdrawLimitUpdatedAt || 0;
+          if (referrerUser) {
+            const limitIncrease = (inv.packagePriceNum || 0) * 0.08;
+            let currentRefLimit = parseFloat(referrerUser.withdrawLimit || 0.00);
+            const limitTime = referrerUser.withdrawLimitUpdatedAt || 0;
 
-          if (now - limitTime > oneDayMs) {
-            currentRefLimit = limitIncrease;
-          } else {
-            currentRefLimit += limitIncrease;
+            if (now - limitTime > oneDayMs) {
+              currentRefLimit = limitIncrease;
+            } else {
+              currentRefLimit += limitIncrease;
+            }
+
+            await db.ref('users/' + referrerUid).update({
+              withdrawLimit: currentRefLimit,
+              withdrawLimitUpdatedAt: firebase.database.ServerValue.TIMESTAMP
+            });
           }
-
-          await db.ref('users/' + referrerUid).update({
-            withdrawLimit: currentRefLimit,
-            withdrawLimitUpdatedAt: now
-          });
         }
       }
 
@@ -1893,108 +2044,137 @@
       renderHistoryScreen();
     }
 
-    function renderHistoryScreen() {
+    // 2. QUERY OPTIMIZATION: limitToLast(historyLimit) on flattened nodes
+    async function renderHistoryScreen() {
+      if (!currentUser) return;
       const container = document.getElementById('history-items-container');
       const loadMoreBox = document.getElementById('history-load-more-box');
       if (!container) return;
 
+      container.innerHTML = '<p class="text-xs text-slate-400 text-center py-4">Loading history...</p>';
+
       let combined = [];
 
-      if (historyTab === 'all' || historyTab === 'deposit') {
-        userInvestments.forEach(inv => {
-          combined.push({
-            type: 'deposit',
-            title: inv.packageName,
-            amountStr: inv.packagePrice,
-            status: inv.status,
-            date: inv.date,
-            time: inv.time || '',
-            trx: inv.transactionId || 'N/A',
-            timestamp: inv.createdAt || 0
-          });
-        });
-      }
-
-      if (historyTab === 'all' || historyTab === 'withdraw' || historyTab === 'reward') {
-        userTransactions.forEach(tx => {
-          if (historyTab === 'all' || historyTab === tx.type) {
+      try {
+        if (historyTab === 'all' || historyTab === 'deposit') {
+          const invSnap = await db.ref('investments/' + currentUser.uid).limitToLast(historyLimit).once('value');
+          const invData = invSnap.val() || {};
+          Object.values(invData).forEach(inv => {
             combined.push({
-              type: tx.type,
-              title: tx.title,
-              amountStr: tx.amountStr,
-              status: tx.type === 'withdraw' ? 'Completed' : 'Received',
-              date: tx.date,
-              time: '',
-              trx: tx.method || 'System',
-              timestamp: tx.timestamp || 0
+              type: 'deposit',
+              title: `Deposit: ${inv.packageName}`,
+              amountStr: inv.packagePrice,
+              status: inv.status === 'Approved' ? 'Approved' : (inv.status === 'Rejected' ? 'Rejected' : 'Pending'),
+              date: inv.date,
+              time: inv.time || '',
+              trx: inv.transactionId || 'N/A',
+              timestamp: inv.createdAt || 0
             });
-          }
-        });
-      }
-
-      combined.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-
-      if (combined.length === 0) {
-        container.innerHTML = `
-          <div class="p-8 text-center bg-slate-50 border border-slate-100 rounded-3xl">
-            <i data-lucide="inbox" class="w-8 h-8 mx-auto text-slate-300 mb-2"></i>
-            <h4 class="text-xs font-extrabold text-slate-800">No History Records</h4>
-            <p class="text-[11px] text-slate-400 mt-1">No activities found in this section.</p>
-          </div>
-        `;
-        if (loadMoreBox) loadMoreBox.classList.add('hidden');
-        lucide.createIcons();
-        return;
-      }
-
-      const visible = combined.slice(0, historyLimit);
-
-      container.innerHTML = visible.map(inv => {
-        let statusBadge = '<span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 font-extrabold text-[10px]">🟢 Approved</span>';
-        if (inv.status === 'Processing') {
-          statusBadge = '<span class="px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-600 font-extrabold text-[10px]">🟡 Processing</span>';
-        } else if (inv.status === 'Rejected') {
-          statusBadge = '<span class="px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-500 font-extrabold text-[10px]">🔴 Rejected</span>';
-        } else if (inv.status === 'Completed' || inv.status === 'Received') {
-          statusBadge = '<span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 font-extrabold text-[10px]">🟢 Done</span>';
+          });
         }
 
-        return `
-          <div class="p-4 bg-white border border-slate-200 rounded-3xl shadow-sm hover:shadow-md transition">
-            <div class="flex items-center justify-between mb-2">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-brand-purple"></span>
-                <h4 class="text-xs font-black text-slate-900">${inv.title}</h4>
-              </div>
-              ${statusBadge}
-            </div>
+        if (historyTab === 'all' || historyTab === 'withdraw') {
+          const wdSnap = await db.ref('withdrawals/' + currentUser.uid).limitToLast(historyLimit).once('value');
+          const wdData = wdSnap.val() || {};
+          Object.values(wdData).forEach(w => {
+            const rawNum = (w.accountNumber || '').replace(/[()]/g, '');
+            const cleanNum = maskAccountNumber(rawNum);
+            combined.push({
+              type: 'withdraw',
+              title: `Withdraw to ${w.method} - ${cleanNum}`,
+              amountStr: `- Rs. ${parseFloat(w.amount).toFixed(2)}`,
+              status: w.status || 'Pending',
+              date: w.date || 'Today',
+              time: w.time || '',
+              trx: `Title: ${w.accountTitle || 'N/A'}`,
+              timestamp: w.timestamp || 0
+            });
+          });
+        }
 
-            <div class="flex justify-between items-center bg-slate-50 p-2.5 rounded-2xl mb-2">
-              <span class="text-[11px] font-semibold text-slate-400">Amount:</span>
-              <span class="text-xs font-black text-brand-purple">${inv.amountStr}</span>
-            </div>
+        if (historyTab === 'all' || historyTab === 'reward') {
+          const txSnap = await db.ref('transactions/' + currentUser.uid).limitToLast(historyLimit).once('value');
+          const txData = txSnap.val() || {};
+          Object.values(txData).forEach(tx => {
+            if (tx.type === 'reward') {
+              combined.push({
+                type: 'reward',
+                title: tx.title,
+                amountStr: tx.amountStr,
+                status: 'Approved',
+                date: tx.date,
+                time: '',
+                trx: 'Bonus Reward',
+                timestamp: tx.timestamp || 0
+              });
+            }
+          });
+        }
 
-            <div class="space-y-1 text-[10px] font-medium text-slate-400">
-              <div class="flex justify-between">
-                <span>Date:</span>
-                <span class="font-bold text-slate-700">${inv.date} ${inv.time || ''}</span>
+        combined.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+        if (combined.length === 0) {
+          container.innerHTML = `
+            <div class="p-8 text-center bg-slate-50 border border-slate-100 rounded-3xl">
+              <i data-lucide="inbox" class="w-8 h-8 mx-auto text-slate-300 mb-2"></i>
+              <h4 class="text-xs font-extrabold text-slate-800">No History Records</h4>
+              <p class="text-[11px] text-slate-400 mt-1">No activities found in this section.</p>
+            </div>
+          `;
+          if (loadMoreBox) loadMoreBox.classList.add('hidden');
+          lucide.createIcons({ root: container });
+          return;
+        }
+
+        const visible = combined.slice(0, historyLimit);
+
+        container.innerHTML = visible.map(inv => {
+          let statusBadge = '<span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 font-extrabold text-[10px]">🟢 Approved</span>';
+          if (inv.status === 'Pending') {
+            statusBadge = '<span class="px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-600 font-extrabold text-[10px]">🟡 Pending</span>';
+          } else if (inv.status === 'Rejected') {
+            statusBadge = '<span class="px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-500 font-extrabold text-[10px]">🔴 Rejected</span>';
+          }
+
+          return `
+            <div class="p-4 bg-white border border-slate-200 rounded-3xl shadow-sm hover:shadow-md transition">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-purple"></span>
+                  <h4 class="text-xs font-black text-slate-900">${inv.title}</h4>
+                </div>
+                ${statusBadge}
               </div>
-              <div class="flex justify-between">
-                <span>Trx:</span>
-                <span class="font-bold text-slate-700">${inv.trx}</span>
+
+              <div class="flex justify-between items-center bg-slate-50 p-2.5 rounded-2xl mb-2">
+                <span class="text-[11px] font-semibold text-slate-400">Amount:</span>
+                <span class="text-xs font-black text-brand-purple">${inv.amountStr}</span>
+              </div>
+
+              <div class="space-y-1 text-[10px] font-medium text-slate-400">
+                <div class="flex justify-between">
+                  <span>Date:</span>
+                  <span class="font-bold text-slate-700">${inv.date} ${inv.time || ''}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Details:</span>
+                  <span class="font-bold text-slate-700">${inv.trx}</span>
+                </div>
               </div>
             </div>
-          </div>
-        `;
-      }).join('');
+          `;
+        }).join('');
 
-      if (combined.length > historyLimit) {
-        loadMoreBox.classList.remove('hidden');
-      } else {
-        loadMoreBox.classList.add('hidden');
+        if (combined.length >= historyLimit) {
+          loadMoreBox.classList.remove('hidden');
+        } else {
+          loadMoreBox.classList.add('hidden');
+        }
+
+        lucide.createIcons({ root: container });
+      } catch (e) {
+        container.innerHTML = '<p class="text-xs text-red-500 text-center py-4">Error loading history.</p>';
       }
-
-      lucide.createIcons();
     }
 
     function loadMoreHistory() {
@@ -2002,57 +2182,61 @@
       renderHistoryScreen();
     }
 
-    function renderWalletWithdrawals() {
+    function maskAccountNumber(num) {
+      if (!num) return '';
+      const clean = num.replace(/[^0-9a-zA-Z]/g, '');
+      if (clean.length <= 4) return clean;
+      return clean.slice(0, 4) + '****' + clean.slice(-3);
+    }
+
+    function renderWalletWithdrawalsUI(withdrawalsList) {
       const list = document.getElementById('wallet-withdraw-history-list');
-      const loadBtn = document.getElementById('wallet-history-load-more');
       if (!list) return;
 
-      const withdrawOnly = userTransactions.filter(t => t.type === 'withdraw');
-
-      if (withdrawOnly.length === 0) {
+      if (!withdrawalsList || withdrawalsList.length === 0) {
         list.innerHTML = `
           <div class="p-6 text-center bg-slate-50 rounded-2xl border border-slate-100">
             <i data-lucide="receipt" class="w-8 h-8 mx-auto text-slate-300 mb-2"></i>
             <p class="text-xs font-semibold text-slate-400">No withdrawal records yet.</p>
           </div>
         `;
-        if (loadBtn) loadBtn.classList.add('hidden');
-        lucide.createIcons();
+        lucide.createIcons({ root: list });
         return;
       }
 
-      const visible = withdrawOnly.slice(0, walletWithdrawLimit);
+      const visible = withdrawalsList.slice(0, 3);
 
-      list.innerHTML = visible.map(item => `
-        <div class="p-3.5 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="upload" class="w-5 h-5"></i>
+      list.innerHTML = visible.map(item => {
+        const rawNum = (item.accountNumber || '').replace(/[()]/g, '');
+        const cleanNum = maskAccountNumber(rawNum);
+        let badgeColor = 'text-amber-500 bg-amber-50';
+        if (item.status === 'Approved') badgeColor = 'text-emerald-600 bg-emerald-50';
+        if (item.status === 'Rejected') badgeColor = 'text-red-500 bg-red-50';
+
+        return `
+          <div class="p-3.5 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <i data-lucide="upload" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h5 class="text-xs font-extrabold text-slate-800">${item.method} - ${cleanNum}</h5>
+                <p class="text-[10px] font-medium text-slate-400 mt-0.5">${item.date || 'Today'} &bull; <span class="px-1.5 py-0.5 rounded font-bold ${badgeColor}">${item.status || 'Pending'}</span></p>
+              </div>
             </div>
-            <div>
-              <h5 class="text-xs font-extrabold text-slate-800">${item.title}</h5>
-              <p class="text-[10px] font-medium text-slate-400 mt-0.5">${item.date || 'Today'}</p>
-            </div>
+            <span class="text-xs font-extrabold text-red-500">- Rs. ${parseFloat(item.amount).toFixed(2)}</span>
           </div>
-          <span class="text-xs font-extrabold text-red-500">${item.amountStr}</span>
-        </div>
-      `).join('');
+        `;
+      }).join('');
 
-      if (withdrawOnly.length > walletWithdrawLimit) {
-        loadBtn.classList.remove('hidden');
-      } else {
-        loadBtn.classList.add('hidden');
-      }
-
-      lucide.createIcons();
+      lucide.createIcons({ root: list });
     }
 
-    function loadMoreWalletWithdrawals() {
-      walletWithdrawLimit += 8;
-      renderWalletWithdrawals();
+    function goToWithdrawHistoryTab() {
+      goToScreen('screen-history');
+      switchHistoryTab('withdraw');
     }
 
-    // PAYMENT METHODS SAVE WITH IMAGE ICONS & DUPLICATE PREVENTION
     async function handleSaveWithdrawAccount(e) {
       e.preventDefault();
       if (!currentUser) return;
@@ -2155,10 +2339,9 @@
         `;
       }).join('');
 
-      lucide.createIcons();
+      lucide.createIcons({ root: container });
     }
 
-    // DYNAMIC WITHDRAW SCREEN (MIN RS. 20 CHECK)
     function renderWithdrawPaymentOptions() {
       const container = document.getElementById('dynamic-withdraw-methods');
       if (!container) return;
@@ -2189,13 +2372,13 @@
                 <span class="text-[10px] text-slate-400 font-semibold">Title: ${m.title}</span>
               </div>
             </div>
-            <input type="radio" name="withdraw-method" value="${m.gateway} (${m.number})" ${idx === 0 ? 'checked' : ''} class="w-4 h-4 text-brand-purple accent-brand-purple">
+            <input type="radio" name="withdraw-method" value="${m.gateway}" data-num="${m.number}" data-title="${m.title}" ${idx === 0 ? 'checked' : ''} class="w-4 h-4 text-brand-purple accent-brand-purple">
           </label>
         `;
       }).join('');
     }
 
-    function handleProcessWithdrawal() {
+    async function handleProcessWithdrawal() {
       if (!currentUser) return;
       const methods = Object.values(savedPaymentMethods);
       if (methods.length === 0) {
@@ -2205,8 +2388,17 @@
       }
 
       const amountInput = parseFloat(document.getElementById('withdraw-amount-input').value || 0);
-      const selectedMethodEl = document.querySelector('input[name="withdraw-method"]:checked');
-      const method = selectedMethodEl ? selectedMethodEl.value : 'Default Account';
+      const selectedRadio = document.querySelector('input[name="withdraw-method"]:checked');
+      
+      if (!selectedRadio) {
+        showToast("Select Method", "Please choose a withdrawal account.", "alert-circle", true);
+        return;
+      }
+
+      const methodGateway = selectedRadio.value;
+      const accNumber = selectedRadio.getAttribute('data-num') || '';
+      const accTitle = selectedRadio.getAttribute('data-title') || '';
+      const userFullName = document.getElementById('profile-full-name').innerText || 'User';
 
       if (isNaN(amountInput) || amountInput < 20) {
         showToast("Invalid Amount", "Minimum withdrawal amount is Rs. 20.", "alert-circle", true);
@@ -2227,23 +2419,33 @@
       const newLimit = Math.max(0, currentWithdrawLimit - amountInput);
       const d = new Date();
       const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      const timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-      db.ref('users/' + currentUser.uid + '/transactions').push({
-        type: 'withdraw',
-        title: `Withdraw to ${method}`,
-        amountStr: `- Rs. ${amountInput.toFixed(2)}`,
-        isPositive: false,
+      const withdrawData = {
+        userId: currentUser.uid,
+        fullName: userFullName,
+        method: methodGateway,
+        accountNumber: accNumber,
+        accountTitle: accTitle,
+        amount: amountInput,
+        status: "Pending",
         date: dateStr,
+        time: timeStr,
         timestamp: firebase.database.ServerValue.TIMESTAMP
-      });
+      };
 
-      db.ref('users/' + currentUser.uid).update({
+      // FLATTENED NODE: /withdrawals/{uid}
+      const newWdRef = db.ref('withdrawals/' + currentUser.uid).push();
+      await newWdRef.set({ id: newWdRef.key, ...withdrawData });
+      await db.ref('withdraw_requests/' + newWdRef.key).set({ id: newWdRef.key, ...withdrawData });
+
+      await db.ref('users/' + currentUser.uid).update({
         balance: newBal,
         withdrawLimit: newLimit
       });
 
       document.getElementById('withdraw-amount-input').value = '';
-      showToast("Withdrawal Requested", `Your withdrawal request of Rs. ${amountInput} via ${method} has been submitted!`, "check-check");
+      showToast("Withdrawal Requested", `Your request of Rs. ${amountInput} via ${methodGateway} has been submitted!`, "check-check");
       goToScreen('screen-wallet');
     }
 
@@ -2256,65 +2458,67 @@
       return name.slice(0, 2) + '****' + name.slice(-1) + '@' + domain;
     }
 
-    function loadReferralsList() {
+    // 3. FLATTENED DIRECT REFERRAL TEAM QUERY: /referrals/{uid}
+    async function loadReferralsList() {
       if (!currentUser) return;
       const listEl = document.getElementById('referrals-team-list');
       const countEl = document.getElementById('ref-team-count-full');
       const commEl = document.getElementById('ref-earned-commission-total');
       if (!listEl) return;
 
-      db.ref('users/' + currentUser.uid).once('value', (snap) => {
-        const u = snap.val() || {};
-        const totalComm = parseFloat(u.totalReferralCommission || 0);
-        if (commEl) commEl.innerText = totalComm.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      });
+      listEl.innerHTML = '<p class="text-xs text-slate-400 text-center py-6">Loading team...</p>';
 
-      db.ref('users').orderByChild('referredBy').equalTo(currentReferralCode).once('value', (snap) => {
-        const team = snap.val();
-        if (!team) {
-          countEl.innerText = '0';
-          listEl.innerHTML = `
-            <div class="text-center py-6">
-              <i data-lucide="users" class="w-8 h-8 mx-auto text-slate-300 mb-2"></i>
-              <p class="text-xs font-semibold text-slate-400">No members joined with your code yet.</p>
-            </div>
-          `;
-          lucide.createIcons();
-          return;
-        }
+      const uSnap = await db.ref('users/' + currentUser.uid).once('value');
+      const u = uSnap.val() || {};
+      const totalComm = parseFloat(u.totalReferralCommission || 0);
+      if (commEl) commEl.innerText = totalComm.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-        const members = Object.values(team);
-        countEl.innerText = members.length.toString();
+      // Direct lookup from /referrals/{currentUser.uid} (0 ms overhead)
+      const teamSnap = await db.ref('referrals/' + currentUser.uid).limitToLast(50).once('value');
+      const team = teamSnap.val();
 
-        listEl.innerHTML = members.map((m, idx) => `
-          <div class="p-3.5 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-full bg-purple-100 text-brand-purple font-extrabold text-xs flex items-center justify-center">
-                ${idx + 1}
-              </div>
-              <div>
-                <h5 class="text-xs font-extrabold text-slate-800">${m.fullName || 'Member'}</h5>
-                <p class="text-[10px] text-slate-400 font-semibold">${maskEmail(m.email)}</p>
-              </div>
-            </div>
-            <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">Active</span>
+      if (!team) {
+        countEl.innerText = '0';
+        listEl.innerHTML = `
+          <div class="text-center py-6">
+            <i data-lucide="users" class="w-8 h-8 mx-auto text-slate-300 mb-2"></i>
+            <p class="text-xs font-semibold text-slate-400">No members joined with your code yet.</p>
           </div>
-        `).join('');
-        lucide.createIcons();
-      });
+        `;
+        lucide.createIcons({ root: listEl });
+        return;
+      }
+
+      const members = Object.values(team);
+      countEl.innerText = members.length.toString();
+
+      listEl.innerHTML = members.map((m, idx) => `
+        <div class="p-3.5 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-purple-100 text-brand-purple font-extrabold text-xs flex items-center justify-center">
+              ${idx + 1}
+            </div>
+            <div>
+              <h5 class="text-xs font-extrabold text-slate-800">${m.fullName || 'Member'}</h5>
+              <p class="text-[10px] text-slate-400 font-semibold">${maskEmail(m.email)}</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">Active</span>
+        </div>
+      `).join('');
+
+      lucide.createIcons({ root: listEl });
     }
 
-    // Dynamic Footer Active Highlighting
     function updateFooterActiveHighlight(screenId) {
-      const tabMapping = {
+      const tabMap = {
         'screen-dashboard': 'dashboard',
         'screen-history': 'history',
         'screen-earn': 'earn',
         'screen-wallet': 'wallet',
         'screen-profile': 'profile'
       };
-      const activeTabName = tabMapping[screenId];
-      if (!activeTabName) return;
+      const activeTabName = tabMap[screenId] || '';
 
       document.querySelectorAll('.footer-tab').forEach(tab => {
         const tabType = tab.getAttribute('data-tab');
@@ -2329,6 +2533,11 @@
     }
 
     function goToScreen(screenId) {
+      if (['screen-terms', 'screen-privacy', 'screen-help', 'screen-about'].includes(screenId)) {
+        const active = document.querySelector('.app-screen.active');
+        if (active && active.id !== screenId) policyReturnScreen = active.id;
+      }
+
       document.querySelectorAll('.app-screen').forEach(el => {
         el.classList.remove('active');
         el.scrollTop = 0;
@@ -2360,18 +2569,28 @@
         target.scrollTop = 0;
         window.scrollTo(0, 0);
         updateFooterActiveHighlight(screenId);
-        lucide.createIcons();
+
+        if (screenId === 'screen-history') {
+          renderHistoryScreen();
+        } else if (screenId === 'screen-referrals') {
+          loadReferralsList();
+        }
       }
+    }
+
+    function goBackFromPolicy() {
+      goToScreen(policyReturnScreen || 'screen-signup');
     }
 
     function togglePasswordVisibility(inputId, btn) {
       const input = document.getElementById(inputId);
       const isPassword = input.type === 'password';
       input.type = isPassword ? 'text' : 'password';
-      btn.innerHTML = isPassword ? '<i data-lucide="eye" class="w-5 h-5"></i>' : '<i data-lucide="eye-off" class="w-5 h-5"></i>';
-      lucide.createIcons();
+      btn.innerHTML = isPassword ? '<i data-lucide="eye" class="w-4 h-4"></i>' : '<i data-lucide="eye-off" class="w-4 h-4"></i>';
+      lucide.createIcons({ root: btn });
     }
 
+    // Sign Up Handler with Flattened DB Writes + Welcome Bonus + Direct Ref Tree
     async function handleSignup(e) {
       e.preventDefault();
       const name = document.getElementById('reg-name').value.trim();
@@ -2405,12 +2624,15 @@
         const user = userCredential.user;
         const newRefCode = generateRefCodeFromName(name);
 
+        const initialBalance = incomingRef ? 50.00 : 0.00;
+
+        // 1. Basic User Profile (/users/{uid})
         await db.ref('users/' + user.uid).set({
           fullName: name,
           email: email,
           phone: phone,
           gender: gender,
-          balance: 0.00,
+          balance: initialBalance,
           withdrawLimit: 0.00,
           totalReferralCommission: 0.00,
           withdrawLimitUpdatedAt: firebase.database.ServerValue.TIMESTAMP,
@@ -2419,8 +2641,41 @@
           createdAt: firebase.database.ServerValue.TIMESTAMP
         });
 
+        // 2. Instant Referral Code Lookup Index (/referral_codes/{code})
+        await db.ref('referral_codes/' + newRefCode).set({
+          uid: user.uid,
+          fullName: name,
+          code: newRefCode
+        });
+
+        // 3. Direct Tree Write to Referrer Node (/referrals/{referrerUid}/{newUserUid})
+        if (incomingRef) {
+          const refLookupSnap = await db.ref('referral_codes/' + incomingRef.toUpperCase()).once('value');
+          const refObj = refLookupSnap.val();
+          if (refObj && refObj.uid) {
+            await db.ref('referrals/' + refObj.uid + '/' + user.uid).set({
+              uid: user.uid,
+              fullName: name,
+              email: email,
+              joinedAt: firebase.database.ServerValue.TIMESTAMP
+            });
+          }
+
+          // Welcome Bonus Transaction
+          const d = new Date();
+          const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+          await db.ref('transactions/' + user.uid).push({
+            type: 'reward',
+            title: 'Referral Welcome Bonus',
+            amountStr: '+Rs. 50.00',
+            isPositive: true,
+            date: dateStr,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
+          });
+        }
+
         document.getElementById('signup-form').reset();
-        showToast("Account Created", "Welcome to Earn Money App! Your account is ready.", "user-check");
+        showToast("Account Created", incomingRef ? "Welcome to Nexus Earn Hub! Rs. 50 Bonus Added." : "Welcome to Nexus Earn Hub!", "user-check");
       } catch (err) {
         errorEl.innerText = err.message;
         errorEl.classList.remove('hidden');
@@ -2430,7 +2685,6 @@
       }
     }
 
-    // LOGIN HANDLER WITH USER-FRIENDLY ERROR MESSAGE
     async function handleLogin(e) {
       e.preventDefault();
       const email = document.getElementById('login-email').value.trim();
@@ -2447,7 +2701,6 @@
         document.getElementById('login-form').reset();
         showToast("Welcome Back", "You have successfully logged in.", "log-in");
       } catch (err) {
-        // Clean user-friendly message
         errorEl.innerText = "Invalid email or password. Please check your credentials and try again.";
         errorEl.classList.remove('hidden');
       } finally {
@@ -2465,7 +2718,9 @@
       }
     }
 
+    // 4. CLEANUP LISTENERS & RAM ON LOGOUT (.off())
     function handleLogout() {
+      cleanupListeners();
       auth.signOut().then(() => {
         showToast("Logged Out", "You have been safely logged out.", "log-out");
         goToScreen('screen-signup');
