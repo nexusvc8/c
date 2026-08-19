@@ -44,13 +44,14 @@ function showToast(title, message, iconName = 'check-circle-2', isError = false)
 
 // 1. Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBGfceOTPICSWNe948xHcqNy9DQWyJ3zzc",
-  authDomain: "growth-31702.firebaseapp.com",
-  projectId: "growth-31702",
-  storageBucket: "growth-31702.firebasestorage.app",
-  messagingSenderId: "1032728993099",
-  appId: "1:1032728993099:web:56ad75c99fcb41e8f59cce"
-};
+    apiKey: "AIzaSyAyFp_NHogS2ExRXLD2812HNL-pj8dz6BU",
+    authDomain: "nexus-c0dac.firebaseapp.com",
+    databaseURL: "https://nexus-c0dac-default-rtdb.firebaseio.com",
+    projectId: "nexus-c0dac",
+    storageBucket: "nexus-c0dac.firebasestorage.app",
+    messagingSenderId: "85480294601",
+    appId: "1:85480294601:web:fc3fd82ca6d79d0f76a518"
+  };
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
