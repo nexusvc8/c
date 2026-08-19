@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nexus Earn Hub - Core Application Logic (With Promo Code Reward System)
+   Nexus Earn Hub - Core Application Logic
    ========================================================================== */
 
 lucide.createIcons();
@@ -108,7 +108,7 @@ const investmentPackages = [
   { id: "pkg-06", name: "Package 06", invest: "10,000 PKR", investNum: 10000, daily: "4,500 PKR", dailyNum: 4500, total: "164,250,000 PKR", netProfit: "Rs. 164,240,000", gradient: "from-violet-600 to-fuchsia-600", badge: "bg-violet-100 text-violet-700" },
   { id: "pkg-07", name: "Package 07", invest: "25,000 PKR", investNum: 25000, daily: "12,000 PKR", dailyNum: 12000, total: "438,000,000 PKR", netProfit: "Rs. 437,975,000", gradient: "from-teal-600 to-emerald-700", badge: "bg-teal-100 text-teal-700" },
   { id: "pkg-08", name: "Package 08", invest: "50,000 PKR", investNum: 50000, daily: "25,000 PKR", dailyNum: 25000, total: "912,500,000 PKR", netProfit: "Rs. 912,450,000", gradient: "from-orange-600 to-red-600", badge: "bg-orange-100 text-orange-700" },
-  { id: "pkg-09", name: "Package 09", invest: "100,000 PKR", investNum: 100000, daily: "55,000 PKR", dailyNum: 55000, total: "2,007,500,000 PKR", netProfit: "Rs. 2,007,400,000", gradient: "from-purple-700 to-pink-700", badge: "bg-purple-100 text-purple-700" },
+  { id: "pkg-09", name: "Package 09", invest: "100,000 PKR", investNum: 10000, daily: "55,000 PKR", dailyNum: 55000, total: "2,007,500,000 PKR", netProfit: "Rs. 2,007,400,000", gradient: "from-purple-700 to-pink-700", badge: "bg-purple-100 text-purple-700" },
   { id: "pkg-10", name: "Package 10", invest: "150,000 PKR", investNum: 150000, daily: "85,000 PKR", dailyNum: 85000, total: "3,102,500,000 PKR", netProfit: "Rs. 3,102,350,000", gradient: "from-cyan-700 to-blue-800", badge: "bg-cyan-100 text-cyan-700" },
   { id: "pkg-11", name: "Package 11", invest: "200,000 PKR", investNum: 200000, daily: "120,000 PKR", dailyNum: 120000, total: "4,380,000,000 PKR", netProfit: "Rs. 4,379,800,000", gradient: "from-amber-700 to-yellow-600", badge: "bg-amber-100 text-amber-800" }
 ];

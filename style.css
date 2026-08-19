@@ -58,20 +58,10 @@ html, body {
 }
 
 /* ==========================================================================
-   Gradient Cards & Keyframe Animations
+   Gradient Cards
    ========================================================================== */
 .gradient-purple-card {
   background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
-}
-
-@keyframes spin-gradient {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animated-logo-ring {
-  background: conic-gradient(from 0deg, #ff0055, #ff9900, #00e676, #00b0ff, #7c3aed, #ff0055);
-  animation: spin-gradient 3.5s linear infinite;
 }
 
 /* ==========================================================================
