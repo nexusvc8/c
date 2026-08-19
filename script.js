@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nexus Earn Hub - Core Application Logic
+   Nexus Earn Hub - Core Application Logic (With Promo Code Reward System)
    ========================================================================== */
 
 lucide.createIcons();
@@ -486,6 +486,90 @@ function updateBalanceUI() {
     if (rangeEl) {
       rangeEl.innerText = `Minimum withdraw amount Rs. 20`;
     }
+  }
+}
+
+// PROMO CODE CLAIM HANDLER
+async function handleClaimPromoCode() {
+  if (!currentUser) return;
+  const inputEl = document.getElementById('promo-code-input');
+  const btn = document.getElementById('promo-claim-btn');
+  const rawCode = (inputEl.value || '').trim();
+
+  if (!rawCode) {
+    showToast("Empty Code", "Please enter a valid promo code!", "alert-circle", true);
+    return;
+  }
+
+  const codeKey = rawCode.toUpperCase();
+  btn.disabled = true;
+  btn.innerText = "Applying...";
+
+  try {
+    const promoSnap = await db.ref('promo_codes/' + codeKey).once('value');
+    const promo = promoSnap.val();
+
+    if (!promo) {
+      showToast("Invalid Code", "This promo code does not exist!", "alert-triangle", true);
+      return;
+    }
+
+    if (promo.status === 'Inactive') {
+      showToast("Expired", "This promo code is no longer active!", "alert-circle", true);
+      return;
+    }
+
+    // Check Duplicate Claim
+    if (promo.claimedUsers && promo.claimedUsers[currentUser.uid]) {
+      showToast("Already Claimed", "You have already claimed this promo code!", "alert-circle", true);
+      return;
+    }
+
+    // Check Max Limit
+    const usedCount = parseInt(promo.usedCount || 0);
+    const maxUsers = parseInt(promo.maxUsers || 0);
+
+    if (maxUsers > 0 && usedCount >= maxUsers) {
+      showToast("Limit Reached", "Promo code limit has been reached!", "alert-circle", true);
+      return;
+    }
+
+    const rewardAmount = parseFloat(promo.rewardAmount || 0);
+    if (rewardAmount <= 0) {
+      showToast("Invalid Reward", "Promo code has no valid reward configured.", "alert-circle", true);
+      return;
+    }
+
+    // 1. Mark User Claimed & Increment Count
+    const updates = {};
+    updates[`promo_codes/${codeKey}/usedCount`] = usedCount + 1;
+    updates[`promo_codes/${codeKey}/claimedUsers/${currentUser.uid}`] = firebase.database.ServerValue.TIMESTAMP;
+
+    // 2. Add Balance to User
+    const newBal = currentBalance + rewardAmount;
+    updates[`users/${currentUser.uid}/balance`] = newBal;
+
+    await db.ref().update(updates);
+
+    // 3. Record Transaction Record
+    const d = new Date();
+    const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    await db.ref('transactions/' + currentUser.uid).push({
+      type: 'reward',
+      title: `Promo Code: ${codeKey}`,
+      amountStr: `+Rs. ${rewardAmount.toFixed(2)}`,
+      isPositive: true,
+      date: dateStr,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
+    });
+
+    inputEl.value = '';
+    showToast("Promo Code Claimed! 🎉", `+Rs. ${rewardAmount.toFixed(2)} added to your balance!`, "gift");
+  } catch (err) {
+    showToast("Error", err.message, "alert-circle", true);
+  } finally {
+    btn.disabled = false;
+    btn.innerText = "Apply";
   }
 }
 
